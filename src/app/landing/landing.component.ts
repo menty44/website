@@ -9,8 +9,11 @@ import { GridComponent } from "../grid/grid.component";
   styleUrl: './landing.component.css'
 })
 export class LandingComponent {
-toggle(arg0: string) {
-alert(arg0)}
+
+  switcher: string = 'list'
+  toggle(arg0: string) {
+    this.switcher = arg0
+  }
 
 
 }
