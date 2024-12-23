@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './landing.component.css'
 })
 export class LandingComponent {
+toggle(arg0: string) {
+alert(arg0)}
+
 
 }
