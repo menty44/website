@@ -12,6 +12,7 @@ export class LandingComponent {
 
   switcher: string = 'list'
   toggle(arg0: string) {
+    localStorage.setItem('switcher', arg0);
     this.switcher = arg0
   }
 
