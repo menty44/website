@@ -4,12 +4,16 @@ import { Observable } from 'rxjs';
 
 export interface PersonContact {
   id: number;
-  address: string;
-  email: string;
   firstnamee: string;
-  image: string;
   lastnamee: string;
+  email: string;
   phone: string;
+  address: string;
+  image: string;
+}
+
+export interface PersonContactResponse {
+  data: PersonContact[];
 }
 
 @Injectable({
@@ -21,7 +25,7 @@ export class ContactsService {
 
   constructor(private http: HttpClient) {}
 
-  getPersonContacts(): Observable<PersonContact[]> {
-    return this.http.get<PersonContact[]>(this.apiUrl);
+  getPersonContacts(): Observable<PersonContactResponse[]> {
+    return this.http.get<PersonContactResponse[]>(this.apiUrl);
   }
 }

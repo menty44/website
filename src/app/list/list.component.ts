@@ -3,12 +3,16 @@ import { ContactsService } from '../contacts.service';
 
 export interface PersonContact {
   id: number;
-  address: string;
-  email: string;
   firstnamee: string;
-  image: string;
   lastnamee: string;
+  email: string;
   phone: string;
+  address: string;
+  image: string;
+}
+
+export interface PersonContactResponse {
+  data: PersonContact[];
 }
 
 @Component({
@@ -20,7 +24,7 @@ export interface PersonContact {
 export class ListComponent  implements OnInit {
 
   switcher: string = 'list';
-  contacts: PersonContact[] = [];
+  contacts: any = [];
   loading = false;
   error: string | null = null;
 
@@ -36,7 +40,7 @@ export class ListComponent  implements OnInit {
 
     this.personContactsService.getPersonContacts()
       .subscribe({
-        next: (data) => {
+        next: (data: any) => {
           this.contacts = data;
           this.loading = false;
         },
